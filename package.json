@@ -1,6 +1,6 @@
 {
 	"name": "lite-ytmusic-api",
-	"version": "1.0.0",
+	"version": "1.1.5",
 	"description": "Private API for YouTube Music",
 	"keywords": [
 		"youtube music api",
@@ -10,13 +10,13 @@
 		"music",
 		"youtube"
 	],
-	"homepage": "https://github.com/CycloneAddons/YTMusicAPI#readme",
+	"homepage": "https://github.com/CycloneAddons/lite-ytmusic-api#readme",
 	"bugs": {
-		"url": "https://github.com/CycloneAddons/YTMusicAPI/issues"
+		"url": "https://github.com/CycloneAddons/lite-ytmusic-api/issues"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/CycloneAddons/YTMusicAPI.git"
+		"url": "git+https://github.com/CycloneAddons/lite-ytmusic-api.git"
 	},
 	"license": "MIT",
 	"author": "Cyclone Addons",

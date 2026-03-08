@@ -72,10 +72,10 @@ export default class YTMusicAPI {
         }
 
         const html = (await this.client.get("/")).data as string
-        const setConfigs = html.match(/ytcfg\.set\(.*\)/) || []
+        const setConfigs = html.match(/ytcfg\.set\(.*?\);/) || []
 
         const configs = setConfigs
-            .map(c => c.slice(10, -1))
+            .map(c => c.slice(10, -2))
             .map(s => {
                 try {
                     return JSON.parse(s)

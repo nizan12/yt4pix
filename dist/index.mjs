@@ -57,8 +57,8 @@ var YTMusicAPI = class {
       }
     }
     const html = (await this.client.get("/")).data;
-    const setConfigs = html.match(/ytcfg\.set\(.*\)/) || [];
-    const configs = setConfigs.map((c) => c.slice(10, -1)).map((s) => {
+    const setConfigs = html.match(/ytcfg\.set\(.*?\);/) || [];
+    const configs = setConfigs.map((c) => c.slice(10, -2)).map((s) => {
       try {
         return JSON.parse(s);
       } catch {
