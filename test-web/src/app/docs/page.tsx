@@ -1,9 +1,17 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 export default function DocsPage() {
+  const [origin, setOrigin] = useState('http://localhost:3000');
+  
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setOrigin(window.location.origin);
+    }
+  }, []);
+
   const [searchQuery, setSearchQuery] = useState('never gonna give you up');
   const [searchResponse, setSearchResponse] = useState<any>(null);
   const [searchLoading, setSearchLoading] = useState(false);
@@ -65,7 +73,7 @@ export default function DocsPage() {
 
           <h3 style={{ marginBottom: '0.5rem' }}>Full URL Example:</h3>
           <div style={{ background: '#0a0a0a', padding: '1rem', borderRadius: '8px', border: '1px solid #333', marginBottom: '1.5rem', fontFamily: 'monospace', color: '#a78bfa' }}>
-            http://localhost:3000/api/search?q=obh+combi
+            {origin}/api/search?q=obh+combi
           </div>
 
           <div style={{ background: '#0a0a0a', padding: '1.5rem', borderRadius: '8px', border: '1px solid #222' }}>
@@ -112,7 +120,7 @@ export default function DocsPage() {
 
           <h3 style={{ marginBottom: '0.5rem' }}>Full URL Example:</h3>
           <div style={{ background: '#0a0a0a', padding: '1rem', borderRadius: '8px', border: '1px solid #333', marginBottom: '1.5rem', fontFamily: 'monospace', color: '#a78bfa' }}>
-            http://localhost:3000/api/upnext?id=dQw4w9WgXcQ
+            {origin}/api/upnext?id=dQw4w9WgXcQ
           </div>
 
           <div style={{ background: '#0a0a0a', padding: '1.5rem', borderRadius: '8px', border: '1px solid #222' }}>
